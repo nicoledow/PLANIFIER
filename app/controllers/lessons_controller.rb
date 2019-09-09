@@ -20,7 +20,7 @@ class LessonsController < ApplicationController
     get '/lessons/new' do
       if logged_in?
         @my_courses = Course.all.select {|course| course.teacher_id == current_user.id}
-        erb :'/lessons/new'
+        erb :'/lessons/new_lesson'
       else
         redirect to '/login'
       end
