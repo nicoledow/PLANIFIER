@@ -1,2 +1,10 @@
 <h1>Welcome, <%= @teacher_first_name %>. </h1>
 <h2>Let's see what your colleagues are planning...</h2>
+
+<!-- iterate through @lessons and print title/link to show page -->
+
+<ul>
+  <% @lessons.each do |lesson| %>
+    <li><%= lesson.title %> by <%= lesson.course.teacher.name %></li>
+  <% end %>
+</ul>
