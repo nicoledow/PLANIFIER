@@ -9,11 +9,3 @@ world_lang = Course.new(name: "World Languages", teacher_id: 1)
 science_7 = Course.new(name: "Science 7", teacher_id: 3)
 
 
-lesson_info = {
-  :title => "Languages of the World",
-  :objectives => "To learn how many languages there are in the world",
-  :content => "1. Have students write a guess for how many languages are in the world. 2. Show students the answer",
-  :assessment => "Students pass in an exit ticket",
-  :course_id => 3
-}
-language_intro = Lesson.new(lesson_info)
