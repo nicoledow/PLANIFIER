@@ -9,7 +9,7 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "abcdef"
   end
 
-  
+
   get '/' do
     erb :welcome
   end
@@ -26,7 +26,7 @@ class ApplicationController < Sinatra::Base
 
 
   post '/signup' do
-    if params["password"]] == "" || params["email"] == "" || params["name"] == ""
+    if params["password"] == "" || params["email"] == "" || params["name"] == ""
       redirect to '/signup'
     else
       @teacher = Teacher.create(params)
