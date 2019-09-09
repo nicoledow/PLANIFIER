@@ -11,8 +11,13 @@ class LessonsController < ApplicationController
       end
     end
 
-    get '/lessons/new' do
 
+    get '/lessons/new' do
+      if logged_in?
+        erb :'/lessons/new'
+      else
+        redirect to '/login'
+      end
     end
 
 end
