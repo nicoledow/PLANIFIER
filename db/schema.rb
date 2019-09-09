@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20190909184154) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
-    t.string "username"
   end
 
 end
