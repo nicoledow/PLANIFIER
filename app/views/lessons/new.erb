@@ -1,1 +1,24 @@
-<p> form for new lesson plan </p>
+<h1>Create a new lesson:</h1>
+
+<form action="/lessons" method="post">
+  <label for="title">Lesson title: </label>
+  <input type="text" name="title"><br>
+
+  <label for="objectives">Objective(s): </label>
+  <input type="textarea" name="objectives"><br>
+
+  <label for="content">Plan content: </label>
+  <input type="textarea" name="content"><br>
+
+  <label for="assessment">Assessment: </label>
+  <input type="textarea" name="assessment"><br>
+
+  <label for="course">Course: </label>
+    <select name="course">
+      <% @my_courses.each do |course| %>
+        <option value="#{course.name}"><%= course.name %></option>
+      <% end %>
+    </select><br>
+
+  <input type="submit" value="Create">
+</form>

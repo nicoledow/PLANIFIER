@@ -12,12 +12,23 @@ class LessonsController < ApplicationController
     end
 
 
+    post '/lessons' do
+
+    end
+
+
     get '/lessons/new' do
       if logged_in?
+        @my_courses = Course.all.select {|course| course.teacher_id == current_user.id}
         erb :'/lessons/new'
       else
         redirect to '/login'
       end
+    end
+
+
+    get '/lessons/:id' do 
+
     end
 
 end
