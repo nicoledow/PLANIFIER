@@ -8,11 +8,6 @@ spanish_1 = Course.new(name: "Spanish 1", teacher_id: 2)
 world_lang = Course.new(name: "World Languages", teacher_id: 1)
 science_7 = Course.new(name: "Science 7", teacher_id: 3)
 
-# t.string  "title"
-# t.string  "objectives"
-# t.string  "content"
-# t.string  "assessment"
-# t.integer "course_id"
 
 lesson_info = {
   :title => "Languages of the World",
