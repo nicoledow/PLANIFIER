@@ -9,8 +9,16 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "abcdef"
   end
 
-  get "/" do
+  get '/' do
     erb :welcome
+  end
+
+  get '/login' do 
+
+  end
+
+  get '/signup' do
+  
   end
 
 end
