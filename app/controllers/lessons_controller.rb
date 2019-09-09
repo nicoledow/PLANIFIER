@@ -13,7 +13,7 @@ class LessonsController < ApplicationController
 
 
     post '/lessons' do
-
+      binding.pry
     end
 
 

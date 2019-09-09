@@ -15,6 +15,16 @@ class ApplicationController < Sinatra::Base
   end
 
 
+  get '/logout' do
+    if logged_in?
+      session.clear
+      redirect to '/login'
+    else
+      redirect to '/login'
+    end
+  end
+
+
   get '/login' do 
     erb :login
   end
@@ -46,6 +56,12 @@ class ApplicationController < Sinatra::Base
       redirect to '/lessons'
     end
   end
+
+  
+
+
+
+
 
 
   helpers do
