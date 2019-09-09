@@ -20,6 +20,17 @@ class ApplicationController < Sinatra::Base
   end
 
 
+  post '/login' do
+    @teacher = Teacher.find_by(email: params["email"])
+    if !!@teacher && @teacher.authenticate(params["password"])
+      session[:user_id] = @teacher.id
+      redirect to '/lessons'
+    else
+      redirect to '/signup'
+    end
+  end
+
+
   get '/signup' do
     erb :signup
   end
@@ -39,11 +50,11 @@ class ApplicationController < Sinatra::Base
 
   helpers do
     def logged_in?
-      !!session[:id]
+      !!session[:user_id]
     end
 
     def current_user
-      User.find(session[:id])
+      User.find(session[:user_id])
     end
   end
 
