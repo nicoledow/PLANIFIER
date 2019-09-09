@@ -1,3 +1,3 @@
-class TeachersController < Sinatra::Base
+class TeachersController < ApplicationController
 
 end

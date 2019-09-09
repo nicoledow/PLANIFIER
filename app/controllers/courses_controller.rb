@@ -1,3 +1,3 @@
-class CoursesController < Sinatra::Base
+class CoursesController < ApplicationController
 
 end
