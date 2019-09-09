@@ -1,5 +1,5 @@
 mlle = Teacher.new(name: "Nikki Dow", email: "nikki.dow71@gmail.com", username: "n_dow", password: "apple")
-senor = Teacher.new(name: "Senor Munoz", email: mmunoz@school.com, username: "m_munoz", password: "apple")
+senor = Teacher.new(name: "Senor Munoz", email: "mmunoz@school.com", username: "m_munoz", password: "apple")
 frizzle = Teacher.new(name: "Sarah Frizzle", email: "sfrizzle@school.com", username: "s_frizzle", password: "apple")
 
 
