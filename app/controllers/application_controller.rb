@@ -11,8 +11,11 @@ class ApplicationController < Sinatra::Base
 
 
   get '/' do
-    verify_logged_in 
-    erb :welcome
+    if logged_in?
+      redirect to '/lessons'
+    else 
+      erb :welcome
+    end
   end
 
 
