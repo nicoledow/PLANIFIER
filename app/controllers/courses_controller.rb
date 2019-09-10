@@ -12,7 +12,7 @@ class CoursesController < ApplicationController
     erb :'/courses/new'
   end
 
-
+#could use an error message here
   post '/courses' do
     @course = Course.new(name: params["name"], teacher_id: current_user.id)
 
@@ -25,7 +25,7 @@ class CoursesController < ApplicationController
   end
 
 
-
+#could use an error message here -- if lesson doesn't exist (invalid URL)
   get '/courses/:id' do
     verify_logged_in
     @course = Course.find_by_id(params["id"].to_i)

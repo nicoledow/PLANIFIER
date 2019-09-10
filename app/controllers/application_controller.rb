@@ -51,7 +51,7 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-
+#could use an error message here
   post '/signup' do
     if params["password"] == "" || params["email"] == "" || params["name"] == ""
       redirect to '/signup'
