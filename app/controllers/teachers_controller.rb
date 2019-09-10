@@ -1,7 +1,11 @@
 class TeachersController < ApplicationController
 
     get '/teachers' do
-   
+      if logged_in?
+        erb :'/teachers/index'
+      else
+        redirect to '/login'
+      end
     end
 
 
