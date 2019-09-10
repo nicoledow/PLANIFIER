@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
   get '/logout' do
     verify_logged_in
     session.clear
-    redirect to '/login'
+    redirect to '/'
   end
 
 
