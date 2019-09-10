@@ -2,6 +2,7 @@ class TeachersController < ApplicationController
 
     get '/teachers' do
       verify_logged_in
+      @teachers = Teacher.all
       erb :'/teachers/index'
     end
 
