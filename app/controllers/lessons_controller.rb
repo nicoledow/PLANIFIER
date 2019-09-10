@@ -19,8 +19,8 @@ class LessonsController < ApplicationController
 
     get '/lessons' do 
       verify_logged_in
-      @teacher = current_user
       @lessons = Lesson.all
+      @current_user = current_user
       erb :'/lessons/show_all'
     end
 
