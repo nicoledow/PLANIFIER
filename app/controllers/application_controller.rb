@@ -69,8 +69,14 @@ class ApplicationController < Sinatra::Base
 
 
   helpers do
-    def logged_in?
-      !!session[:user_id]
+    # def logged_in?
+    #   !!session[:user_id]
+    # end
+
+    def verify_logged_in
+      if !session[:user_id]
+        redirect to '/login'
+      end
     end
 
     def current_user
