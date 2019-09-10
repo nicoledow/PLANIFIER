@@ -4,9 +4,18 @@
 <ul>
   <% @lessons.each do |lesson| %>
     <li><a href="/lessons/<%=lesson.id%>"> <%= lesson.title %> </a> </li>
-    <!-- why is lesson.course not working? -->
+    
       <% if lesson.course.teacher_id == @current_user.id %>
-        <p> you can delete this</p>
+        <!-- edit button -->
+        <form action="/lessons/<%=lesson.id%>/edit" method="get">
+          <input type="submit" value="Edit">
+        </form>
+
+        <!-- delete button -->
+        <form action="/lessons/<%=lesson.id%>" method="post">
+          <input id="hidden" type="hidden" name="_method" value="delete">
+          <input type="submit" value="Delete">
+        </form>
       <% end %>
   <% end %>
 </ul>
