@@ -3,6 +3,7 @@ class CoursesController < ApplicationController
   get '/courses' do
     verify_logged_in
     @courses = Course.all
+    @current_user = current_user
     erb :'/courses/index'
   end
 

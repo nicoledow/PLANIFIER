@@ -5,5 +5,12 @@
 <ul>
   <% @courses.each do |course| %>
     <li><a href="/courses/<%=course.id%>"> <%= course.name %></a>, taught by <%= course.teacher.name %></li>
-  <% end %>
+      <% if course.teacher_id == @current_user.id%>
+        <!-- edit button -->
+        <form action="/courses/<%=course.id%>" method="post">
+          <input id="hidden" type="hidden" name="_method" value="edit">
+          <input type="submit" value="Edit">
+        </form>
+      <% end %>
+    <% end %>
 </ul>
