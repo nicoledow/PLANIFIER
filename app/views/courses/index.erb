@@ -1,5 +1,7 @@
 <h1> All Courses </h1>
 
+<h3><a href="/courses/new">Create a new course.</a> </h3>
+
 <ul>
   <% @courses.each do |course| %>
     <li><a href="/courses/<%=course.id%>"> <%= course.name %></a>, taught by <%= course.teacher.name %></li>
