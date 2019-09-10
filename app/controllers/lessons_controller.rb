@@ -1,5 +1,14 @@
 class LessonsController < ApplicationController
 
+   #could use error message here -- if lesson id is invalid/lesson doesn't exist/invalid URL
+   get '/lessons/:id' do 
+    verify_logged_in
+    @lesson = Lesson.find_by_id(params["id"])
+    @current_user = current_user
+    erb :'/lessons/show'
+  end
+
+  
     get '/lessons' do 
       verify_logged_in
       @teacher = current_user
@@ -10,8 +19,9 @@ class LessonsController < ApplicationController
 #could use an error message here
     post '/lessons' do
       @course = Course.find_by_id(params["course"].to_i)
-
-      if @lesson = Lesson.create(title: params["title"], objectives: params["objectives"], content: params["content"], assessment: params["assessment"], course_id: @course.id)
+      @lesson = Lesson.new(title: params["title"], objectives: params["objectives"], content: params["content"], assessment: params["assessment"], course_id: @course.id)
+      
+      if @lesson.save
         redirect to "/lessons/#{@lesson.id}"
       else
         redirect to '/lessons/new'
@@ -25,13 +35,6 @@ class LessonsController < ApplicationController
       erb :'/lessons/new_lesson'
     end
 
-#could use error message here -- if lesson id is invalid/lesson doesn't exist/invalid URL
-    get '/lessons/:id' do 
-      verify_logged_in
-      @lesson = Lesson.find_by_id(params["id"])
-      @current_user = current_user
-      erb :'/lessons/show'
-    end
 
 
     get '/mylessons' do
