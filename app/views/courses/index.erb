@@ -7,11 +7,9 @@
     <li><a href="/courses/<%=course.id%>"> <%= course.name %></a>, taught by <%= course.teacher.name %></li>
       <% if course.teacher_id == @current_user.id%>
         <!-- edit button -->
-        <form action="/courses/<%=course.id%>" method="post">
-          <input id="hidden" type="hidden" name="_method" value="patch">
-          <input type="submit" value="Edit">
+        <form action="/courses/<%=course.id%>/edit">
+          <input type="submit" value="Edit" />
         </form>
-
         <!-- delete button -->
         <form action="/courses/<%=course.id%>" method="post">
           <input id="hidden" type="hidden" name="_method" value="delete">
