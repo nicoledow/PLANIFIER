@@ -11,26 +11,24 @@ class ApplicationController < Sinatra::Base
 
 
   get '/' do
-    if logged_in?
-      redirect to '/lessons'
-    else
-      erb :welcome
-    end
+    verify_logged_in 
+    erb :welcome
   end
 
 
   get '/logout' do
-    if logged_in?
-      session.clear
-      redirect to '/login'
-    else
-      redirect to '/login'
-    end
+    verify_logged_in
+    session.clear
+    redirect to '/login'
   end
 
 
-  get '/login' do 
-    erb :login
+  get '/login' do
+    if logged_in?
+      redirect to '/lessons'
+    else 
+      erb :login
+    end
   end
 
 
@@ -46,7 +44,11 @@ class ApplicationController < Sinatra::Base
 
 
   get '/signup' do
-    erb :signup
+    if !logged_in
+      erb :signup
+    else
+      redirect to '/lessons'
+    end
   end
 
 
@@ -69,9 +71,9 @@ class ApplicationController < Sinatra::Base
 
 
   helpers do
-    # def logged_in?
-    #   !!session[:user_id]
-    # end
+    def logged_in?
+      !!session[:user_id]
+    end
 
     def verify_logged_in
       if !session[:user_id]
