@@ -10,8 +10,12 @@ class LessonsController < ApplicationController
 
     post '/lessons' do
       @course = Course.find_by_id(params["course"].to_i)
-      @lesson = Lesson.create(title: params["title"], objectives: params["objectives"], content: params["content"], assessment: params["assessment"], course_id: @course.id)
-      redirect to "/lessons/#{@lesson.id}"
+
+      if @lesson = Lesson.create(title: params["title"], objectives: params["objectives"], content: params["content"], assessment: params["assessment"], course_id: @course.id)
+        redirect to "/lessons/#{@lesson.id}"
+      else
+        redirect to '/lessons/new'
+      end
     end
 
 
