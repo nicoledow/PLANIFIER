@@ -50,7 +50,9 @@ class CoursesController < ApplicationController
 
 
   delete '/courses/:id' do
-
+    #binding.pry
+    Course.find_by_id(params["id"]).destroy
+    redirect to '/courses'
   end
 
 
