@@ -8,13 +8,14 @@ class LessonsController < ApplicationController
     erb :'/lessons/show'
   end
 
-  
+
     get '/lessons' do 
       verify_logged_in
       @teacher = current_user
       @lessons = Lesson.all
       erb :'/lessons/show_all'
     end
+
 
 #could use an error message here
     post '/lessons' do
@@ -29,6 +30,7 @@ class LessonsController < ApplicationController
     end
 
 
+    
     get '/lessons/new' do
       verify_logged_in
       @my_courses = Course.all.select {|course| course.teacher_id == current_user.id}
