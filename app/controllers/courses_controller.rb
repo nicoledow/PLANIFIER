@@ -27,6 +27,13 @@ class CoursesController < ApplicationController
   end
 
 
+  get '/courses/:id/edit' do
+    #binding.pry
+    @course = Course.find_by_id(params["id"])
+    erb :'/courses/edit'
+  end
+
+
 #could use an error message here -- if lesson doesn't exist (invalid URL)
   get '/courses/:id' do
     verify_logged_in
@@ -36,8 +43,8 @@ class CoursesController < ApplicationController
   end
 
   patch '/courses/:id' do
-    binding.pry
     @course = Course.find_by_id(params["id"])
+    erb :'/courses/edit/'
   end
 
 

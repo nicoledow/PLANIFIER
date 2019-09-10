@@ -1,0 +1,8 @@
+<h1> Edit your course: </h1>
+
+<form action="/courses" method="post">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <label for="name"> Course name: </label>
+  <input type="text" name="name" value="<%=@course.name%>">
+  <input type="submit">
+</form>
