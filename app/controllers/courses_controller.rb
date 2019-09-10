@@ -7,6 +7,19 @@ class CoursesController < ApplicationController
     
   end
 
+  get '/courses/new' do
+    @teacher = current_user
+    erb :'/courses/new'
+  end
+
+
+  post '/courses' do
+    @course = Course.create(name: params["name"], teacher_id: current_user.id)
+    redirect to "/courses/#{@course.id}"
+  end
+
+
+
   get '/courses/:id' do
     verify_logged_in
     @course = Course.find_by_id(params["id"].to_i)
@@ -15,13 +28,5 @@ class CoursesController < ApplicationController
   end
 
 
-  get '/courses/new' do
-    erb :'/courses/new'
-  end
-
-
-  post '/courses' do
-
-  end
 
 end
