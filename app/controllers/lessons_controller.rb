@@ -3,7 +3,7 @@ class LessonsController < ApplicationController
     get '/lessons' do 
       if logged_in?
         @teacher = current_user
-        @teacher_first_name = @teacher.name.split(" ").first
+        #@teacher_first_name = @teacher.name.split(" ").first
         @lessons = Lesson.all
         erb :'/lessons/show_all'
       else
@@ -30,7 +30,9 @@ class LessonsController < ApplicationController
 
 
     get '/lessons/:id' do 
-
+      @lesson = Lesson.find_by_id(params["id"])
+      @current_user = current_user
+      erb :'/lessons/show'
     end
 
 end
