@@ -1,11 +1,15 @@
-mlle = Teacher.new(name: "Nikki Dow", email: "nikki.dow71@gmail.com", username: "n_dow", password: "apple")
-senor = Teacher.new(name: "Senor Munoz", email: "mmunoz@school.com", username: "m_munoz", password: "apple")
-frizzle = Teacher.new(name: "Sarah Frizzle", email: "sfrizzle@school.com", username: "s_frizzle", password: "apple")
+Teacher.create(name: "Nikki Dow", email: "nikki.dow@school.com", password: "donut")
+Teacher.create(name: "Tina Frizzle", email: "tfrizzle@school.com", password: "donut")
+Teacher.create(name: "Marty McFly", email: "mmcfly@school.com", password: "donut")
+Teacher.create(name: "Sabrina Spellman", email: "sspellman@witches.com", password: "donut")
 
+Course.create(name: "Potions", teacher_id: 4)
+Course.create(name: "French 1", teacher_id: 1)
+Course.create(name: "French 2", teacher_id: 1)
+Course.create(name: "Guitar", teacher_id: 3)
+Course.create(name: "Skateboarding", teacher_id: 3)
+Course.create(name: "Science", teacher_id: 2)
 
-french_1 = Course.new(name: "French 1", teacher_id: 1)
-spanish_1 = Course.new(name: "Spanish 1", teacher_id: 2)
-world_lang = Course.new(name: "World Languages", teacher_id: 1)
-science_7 = Course.new(name: "Science 7", teacher_id: 3)
-
-
+Lesson.create(title: "French introductions", objectives: "Students will be able to introduce themselves in French", content: "I will teach them things and they will practice.", assessment: "pop quiz", course_id: 2)
+Lesson.create(title: "Lucky potion", objectives: "Students will be able to make a luck potion", content: "Students will read page 394 and make a potion", assessment: "test")
+Lesson.create(title: "Counting to 10 in French", objectives: "Students will be able to count to 10 in French", content: "Students will learn the counting song", assessment: "sing the song to the teacher")
