@@ -1,14 +1,6 @@
 class LessonsController < ApplicationController
 
     get '/lessons' do 
-      # if logged_in?
-      #   @teacher = current_user
-      #   #@teacher_first_name = @teacher.name.split(" ").first
-      #   @lessons = Lesson.all
-      #   erb :'/lessons/show_all'
-      # else
-      #   redirect to '/login'
-      # end
       verify_logged_in
       @teacher = current_user
       @lessons = Lesson.all
@@ -24,12 +16,6 @@ class LessonsController < ApplicationController
 
 
     get '/lessons/new' do
-      # if logged_in?
-      #   @my_courses = Course.all.select {|course| course.teacher_id == current_user.id}
-      #   erb :'/lessons/new_lesson'
-      # else
-      #   redirect to '/login'
-      # end
       verify_logged_in
       @my_courses = Course.all.select {|course| course.teacher_id == current_user.id}
       erb :'/lessons/new_lesson'
