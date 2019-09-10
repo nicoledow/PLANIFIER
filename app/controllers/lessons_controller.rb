@@ -1,13 +1,13 @@
 class LessonsController < ApplicationController
 
   get '/lessons/new' do
-    binding.pry
+    #binding.pry
     verify_logged_in
     @my_courses = Course.all.select {|course| course.teacher_id == current_user.id}
     erb :'/lessons/new'
   end
 
-  
+
    #could use error message here -- if lesson id is invalid/lesson doesn't exist/invalid URL
    get '/lessons/:id' do 
     verify_logged_in
