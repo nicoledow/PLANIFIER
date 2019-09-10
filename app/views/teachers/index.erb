@@ -2,6 +2,8 @@
 
 <ul>
   <% @teachers.each do |teacher| %>
-    <li> <a href="/teachers/<%=teacher.id%>"> <%= teacher.name %>  </a> </li> <br>
+    <% if teacher.id != @current_user.id %>
+      <li> <a href="/teachers/<%=teacher.id%>"> <%= teacher.name %>  </a> </li> <br>
+    <% end %>
   <% end %>
 </ul>
