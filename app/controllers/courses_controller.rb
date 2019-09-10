@@ -6,7 +6,7 @@ class CoursesController < ApplicationController
     erb :'/courses/index'
   end
 
-  
+
   get '/courses/new' do
     @teacher = current_user
     erb :'/courses/new'
@@ -14,8 +14,14 @@ class CoursesController < ApplicationController
 
 
   post '/courses' do
-    @course = Course.create(name: params["name"], teacher_id: current_user.id)
-    redirect to "/courses/#{@course.id}"
+    @course = Course.new(name: params["name"], teacher_id: current_user.id)
+
+    if @course.save
+      redirect to "/courses/#{@course.id}"
+    else
+      @course.destroy
+      redirect to '/courses/new'
+    end
   end
 
 
