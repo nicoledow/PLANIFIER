@@ -79,7 +79,7 @@ class ApplicationController < Sinatra::Base
       !!session[:user_id]
     end
 
-
+#could use an error message here
     def verify_logged_in
       if !session[:user_id]
         redirect to '/login'
