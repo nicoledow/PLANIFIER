@@ -14,4 +14,14 @@ class CoursesController < ApplicationController
     erb :'/courses/show'
   end
 
+
+  get '/courses/new' do
+    erb :'/courses/new'
+  end
+
+
+  post '/courses' do
+
+  end
+
 end
