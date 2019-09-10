@@ -28,7 +28,6 @@ class CoursesController < ApplicationController
 
 
   get '/courses/:id/edit' do
-    #binding.pry
     @course = Course.find_by_id(params["id"])
     erb :'/courses/edit'
   end
@@ -44,7 +43,9 @@ class CoursesController < ApplicationController
 
   patch '/courses/:id' do
     @course = Course.find_by_id(params["id"])
-    erb :'/courses/edit/'
+    @course.update(name: params["name"])
+    @course.save
+    redirect to "/courses/#{@course.id}"
   end
 
 
