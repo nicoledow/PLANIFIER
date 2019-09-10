@@ -14,11 +14,11 @@
   <input type="textarea" name="assessment"><br>
 
   <label for="course">Course: </label>
-    <select name="course">
-      <% @my_courses.each do |course| %>
-        <option value="#{course.name}"><%= course.name %></option>
-      <% end %>
-    </select><br>
+  <select name="course">
+    <% @my_courses.each do |course| %>
+    <option value="<%=course.id%>"><%= course.name %></option>
+    <%end%>
+  </select>
 
   <input type="submit" value="Create">
 </form>

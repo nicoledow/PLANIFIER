@@ -13,7 +13,9 @@ class LessonsController < ApplicationController
 
 
     post '/lessons' do
-      binding.pry
+      #binding.pry
+      @course = Course.find_by_id(params["course"].to_i)
+      @lesson = Lesson.create(title: params["title"], objectives: params["objectives"], content: params["content"], assessment: params["assessment"], course_id: @course.id)
     end
 
 
