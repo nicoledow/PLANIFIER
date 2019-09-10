@@ -18,10 +18,18 @@ class LessonsController < ApplicationController
   end
 
 
-  get '/lessons/:id/edit' do
-    @lesson = Lesson.find_by_id(params["id"])
-    erb :'/lessons/edit'
-  end
+    get '/lessons/:id/edit' do
+      @lesson = Lesson.find_by_id(params["id"])
+      erb :'/lessons/edit'
+    end
+
+
+    patch '/lessons/:id' do
+      @lesson = Lesson.find_by_id(params["id"])
+      @lesson.update(title: params["title"], objectives: params["objectives"], content: params["content"], assessment: params["assessment"])
+      @lesson.save
+      redirect to "/lessons/#{@lesson.id}"
+    end
 
 
     get '/lessons' do 
