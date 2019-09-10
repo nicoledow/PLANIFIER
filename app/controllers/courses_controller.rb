@@ -6,6 +6,7 @@ class CoursesController < ApplicationController
     erb :'/courses/index'
   end
 
+  
   get '/courses/new' do
     @teacher = current_user
     erb :'/courses/new'
