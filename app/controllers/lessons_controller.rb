@@ -8,6 +8,7 @@ class LessonsController < ApplicationController
   end
 
 
+
    #could use error message here -- if lesson id is invalid/lesson doesn't exist/invalid URL
    get '/lessons/:id' do 
     verify_logged_in
@@ -17,11 +18,17 @@ class LessonsController < ApplicationController
   end
 
 
+  get '/lessons/:id/edit' do
+    @lesson = Lesson.find_by_id(params["id"])
+    erb :'/lessons/edit'
+  end
+
+
     get '/lessons' do 
       verify_logged_in
       @lessons = Lesson.all
       @current_user = current_user
-      erb :'/lessons/show_all'
+      erb :'/lessons/index'
     end
 
 
