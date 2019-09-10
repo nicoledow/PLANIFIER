@@ -53,13 +53,21 @@ class ApplicationController < Sinatra::Base
 
 
   post '/signup' do
-    if params["password"] == "" || params["email"] == "" || params["name"] == ""
-      redirect to '/signup'
-    else
-      @teacher = Teacher.create(params)
+    # if params["password"] == "" || params["email"] == "" || params["name"] == ""
+    #   redirect to '/signup'
+    # else
+    #   @teacher = Teacher.create(params)
+    #   @session = session
+    #   @session[:user_id] = @teacher.id
+    #   redirect to '/lessons'
+    # end
+    if validate_signup_data(params)
+        @teacher = Teacher.create(params)
       @session = session
       @session[:user_id] = @teacher.id
       redirect to '/lessons'
+    else
+      redirect to '/signup'
     end
   end
 
@@ -75,15 +83,33 @@ class ApplicationController < Sinatra::Base
       !!session[:user_id]
     end
 
+
     def verify_logged_in
       if !session[:user_id]
         redirect to '/login'
       end
     end
 
+
     def current_user
       Teacher.find(session[:user_id])
     end
   end
+
+
+    def validate_signup_data(params)
+      if params["password"] == "" || params["email"] == "" || params["name"] == ""
+        false
+      #syntax from ActiveRecord documentation:
+      elsif !validates params["email"], format: { with: /@/,
+      message: "only allows letters" }
+        false
+      elsif Teacher.find_by(email: params["email"])
+        false
+      else
+        true
+      end
+    end
+
 
 end
