@@ -35,4 +35,9 @@ class LessonsController < ApplicationController
       erb :'/lessons/show'
     end
 
+
+    get '/mylessons' do
+      redirect to "/teachers/#{current_user.id}"
+    end
+
 end
