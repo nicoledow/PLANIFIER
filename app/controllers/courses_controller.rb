@@ -4,7 +4,6 @@ class CoursesController < ApplicationController
     verify_logged_in
     @courses = Course.all
     erb :'/courses/index'
-    
   end
 
   get '/courses/new' do
