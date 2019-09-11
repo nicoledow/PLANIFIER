@@ -54,6 +54,7 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  
 #could use an error message here
   post '/signup' do
     #presence & uniqueness of email, password done via ActiveRecord in model
@@ -96,17 +97,6 @@ class ApplicationController < Sinatra::Base
   end
 
 
-   def validate_signup_data(params)
-    if params["password"] == "" || params["email"] == "" || params["name"] == ""
-      false
-    elsif !params["email"].match(/@/)
-      false
-    elsif Teacher.find_by(email: params["email"])
-      false
-    else
-      true
-    end
-   end
 
 
 end
