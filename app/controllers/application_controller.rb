@@ -56,13 +56,18 @@ class ApplicationController < Sinatra::Base
 
 #could use an error message here
   post '/signup' do
-    if validate_signup_data(params)
-      @teacher = Teacher.create(params)
-      @session = session
-      @session[:user_id] = @teacher.id
-      redirect to '/lessons'
-    else
+    #presence & uniqueness of email, password done via ActiveRecord in model
+    if params["password"] == "" || params["email"] == "" || params["name"] == ""
       redirect to '/signup'
+    else
+      @teacher = Teacher.new(params)
+      if @teacher.save
+        @session = session
+        @session[:user_id] = @teacher.id
+        redirect to '/lessons'
+      else
+        redirect to '/signup'
+      end
     end
   end
 
