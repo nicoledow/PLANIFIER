@@ -9,7 +9,7 @@ This repository can be forked and run locally.
 
 Ensure you have the "Bundler" gem installed, and run "bundle install" to install all gem dependencies. 
 
-Run the "rake db:migrate" from the terminal to generate database tables.
+Run the "rake db:migrate" command from the terminal to generate database tables.
 
 Run the "shotgun" command from the terminal to run the application on local port 9393.
 
