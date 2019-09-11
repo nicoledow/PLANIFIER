@@ -1,7 +1,6 @@
 class LessonsController < ApplicationController
 
   get '/lessons/new' do
-    #binding.pry
     verify_logged_in
     @my_courses = Course.all.select {|course| course.teacher_id == current_user.id}
     erb :'/lessons/new'
@@ -19,6 +18,7 @@ class LessonsController < ApplicationController
 
 
     get '/lessons/:id/edit' do
+      verify_logged_in
       @lesson = Lesson.find_by_id(params["id"])
       erb :'/lessons/edit'
     end

@@ -22,12 +22,14 @@ class CoursesController < ApplicationController
 
 
   get '/courses/new' do
+    verify_logged_in
     @teacher = current_user
     erb :'/courses/new'
   end
 
 
   get '/courses/:id/edit' do
+    verify_logged_in
     @course = Course.find_by_id(params["id"])
     erb :'/courses/edit'
   end
