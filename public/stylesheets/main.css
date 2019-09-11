@@ -19,6 +19,8 @@
     .navbar {
         background-color: #B0C4DE;
         margin: 5px;
+        width: 100%;
+        justify-content: space-around;
     }
     .navbar a {
         margin: 5px;
