@@ -33,6 +33,11 @@
         text-decoration: none;
         display: block;
       }
+
+      #navbar a:hover {
+        color: #6495ED;
+        background-color: #fff; 
+    }
    
 
     .card {
