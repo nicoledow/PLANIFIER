@@ -1,21 +1,22 @@
 <h1>Welcome, <%= @current_user.name.split(" ").first %>. </h1>
-<h2>Here is what your colleagues are planning...</h2>
+<h2>Here's what your colleagues are planning...</h2>
 
 <ul>
   <% @lessons.each do |lesson| %>
-    <li><a href="/lessons/<%=lesson.id%>"> <%= lesson.title %> </a> </li>
+    <li class="card"><a href="/lessons/<%=lesson.id%>"> <%= lesson.title %> </a> 
     
       <% if lesson.course.teacher_id == @current_user.id %>
         <!-- edit button -->
-        <form action="/lessons/<%=lesson.id%>/edit" method="get">
+        <form action="/lessons/<%=lesson.id%>/edit" method="get" class="form-with-button">
           <input type="submit" value="Edit">
         </form>
 
         <!-- delete button -->
-        <form action="/lessons/<%=lesson.id%>" method="post">
+        <form action="/lessons/<%=lesson.id%>" method="post" class="form-with-button">
           <input id="hidden" type="hidden" name="_method" value="delete">
           <input type="submit" value="Delete">
         </form>
+        </li>
       <% end %>
   <% end %>
 </ul>

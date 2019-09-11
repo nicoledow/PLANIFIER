@@ -1,0 +1,36 @@
+
+@media screen {
+    body {
+        background-color: #FFFAF0;
+    }
+    h1, h2 {
+        font-family: 'Questrial', sans-serif;
+        color: #6495ED;
+    }
+    .flex-container {
+        display:flex;
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        
+    }
+    .navbar {
+        background-color: #B0C4DE;
+        margin: 5px;
+    }
+    .navbar a {
+        margin: 5px;
+    }
+
+    .card {
+        background-color: #6495ED;
+    }
+
+    .form-with-button {
+        display: inline-block;
+    }
+
+
+}
