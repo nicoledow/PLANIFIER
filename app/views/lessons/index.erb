@@ -7,12 +7,12 @@
     
       <% if lesson.course.teacher_id == @current_user.id %>
         <!-- edit button -->
-        <form action="/lessons/<%=lesson.id%>/edit" method="get" class="form-with-button">
+        <form action="/lessons/<%=lesson.id%>/edit" method="get" class="form-button">
           <input type="submit" value="Edit">
         </form>
 
         <!-- delete button -->
-        <form action="/lessons/<%=lesson.id%>" method="post" class="form-with-button">
+        <form action="/lessons/<%=lesson.id%>" method="post" class="form-button">
           <input id="hidden" type="hidden" name="_method" value="delete">
           <input type="submit" value="Delete">
         </form>

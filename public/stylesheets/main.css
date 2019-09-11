@@ -7,6 +7,7 @@
         font-family: 'Questrial', sans-serif;
         color: #6495ED;
     }
+
     .flex-container {
         display:flex;
         width: 100vw;
@@ -32,6 +33,7 @@
         padding: 16px;
         text-decoration: none;
         display: block;
+        font-family: 'Roboto', sans-serif;
       }
 
       #navbar a:hover {
@@ -45,11 +47,11 @@
         margin: 10px;
         padding: 10px;
         align-items: center;
+        box-shadow: 3px 3px 3px #808080;
     }
 
-    .form-with-button {
+    .form-button {
         display: inline-block;
-        
     }
 
     ul {
