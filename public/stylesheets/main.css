@@ -22,14 +22,28 @@
     }
     .navbar a {
         margin: 5px;
+        border: 2px;
+        border-color: #4682B4;
     }
 
     .card {
-        background-color: #6495ED;
+        background-color: #B0C4DE;
+        margin: 10px;
+        padding: 10px;
+        align-items: center;
     }
 
     .form-with-button {
         display: inline-block;
+        
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    h3, h4, h5, p {
+        font-family: 'Lora', serif;
     }
 
 
