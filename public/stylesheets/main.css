@@ -16,17 +16,24 @@
         align-items: center;
         
     }
-    .navbar {
-        background-color: #B0C4DE;
-        margin: 5px;
-        width: 100%;
-        justify-content: space-around;
-    }
-    .navbar a {
-        margin: 5px;
-        border: 2px;
-        border-color: #4682B4;
-    }
+
+    #navbar {
+        height: 100%;
+        width: 20%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #6495ED;
+      }
+      
+      
+      #navbar a {
+        color: white;
+        padding: 16px;
+        text-decoration: none;
+        display: block;
+      }
+   
 
     .card {
         background-color: #B0C4DE;
