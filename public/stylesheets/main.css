@@ -3,13 +3,22 @@ body {
     background-color: #EADEDB; /* "Almost mauve" */
 }
 
+.flex-container { /* wraps all elements of body except mainNav */
+    display:flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 .mainNav {
     height: 100%;
     width: 20%;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #6495ED;
+    background-color: #615550; /* "brown granit */
 }
 
 .mainNav__link {
@@ -22,7 +31,7 @@ body {
 
 .mainNav__link:hover {
     color: #6495ED;
-    background-color: #fff; 
+    background-color: #EADEDB; /* "Almost mauve" */
 }
 
 .mainHeader { /* h1 tags */
@@ -41,16 +50,34 @@ body {
 
 }
 
-.list { /* ul tags */
+.smallHeader__link {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    background-color: #615550;
+    margin: 10px;
+    padding: 10px;
+    align-items: center;
+    box-shadow: 3px 3px 3px #808080;
+    font-family: 'Roboto', sans-serif;
+    color: #fff; /* creme de la peche */
+}
 
+.list { /* ul tags */
+    list-style-type: none;
 }
 
 .list__item { /* li within a ul */
-
+    background-color: #B0C4DE;
+    margin: 10px;
+    padding: 10px;
+    align-items: center;
+    box-shadow: 3px 3px 3px #808080;
+    font-family: 'Roboto', sans-serif;
 }
 
 .list__itemLink {
     font-family: 'Roboto', sans-serif;
+    text-decoration: none;
 }
 
 .form {
