@@ -32,6 +32,13 @@ class LessonsController < ApplicationController
     end
 
 
+    delete '/lessons/:id' do
+      @lesson = Lesson.find_by_id(params["id"])
+      @lesson.destroy
+      redirect to '/lessons'
+    end
+
+
     get '/lessons' do 
       verify_logged_in
       @lessons = Lesson.all
