@@ -4,18 +4,19 @@
 
 <ul class="list">
   <% @courses.each do |course| %>
-    <li class="list__item"><a href="/courses/<%=course.id%>" class="list__itemLink"> <%= course.name %></a>, taught by <%= course.teacher.name %></li>
+    <li class="list__item"><a href="/courses/<%=course.id%>" class="list__itemLink"> <%= course.name %></a>
       <% if course.teacher_id == @current_user.id%>
         <!-- edit button -->
-        <form action="/courses/<%=course.id%>/edit" method="get" class="form">
+        <form action="/courses/<%=course.id%>/edit" method="get">
           <input type="submit" value="Edit" class="form__button">
         </form>
         
         <!-- delete button -->
-        <form action="/courses/<%=course.id%>" method="post" class="form">
+        <form action="/courses/<%=course.id%>" method="post">
           <input id="hidden" type="hidden" name="_method" value="delete">
           <input type="submit" value="Delete" class="form__button">
         </form>
       <% end %>
+      </li>
     <% end %>
 </ul>

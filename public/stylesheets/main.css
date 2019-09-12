@@ -60,7 +60,6 @@ body {
 
 .list { /* ul tags */
     list-style-type: none;
-    
 }
 
 .list__item { /* li within a ul */
@@ -69,6 +68,7 @@ body {
     padding: 10px;
     box-shadow: 2px 2px 2px #808080;
     font-family: 'Nobile', sans-serif;
+    justify-content: center;
 }
 
 .list__itemLink {
@@ -85,20 +85,26 @@ body {
 }
 
 .form__label {
-  padding: 5px;
   
 }
 
 .form__textInput {
-  padding: 5px;
+
+}
+
+.form__piece {
+    border: 2px solid black;
+    padding: 5px;
+    justify-content: center;
 }
 
 .form__textArea {
-  padding: 5px;
+
 }
 
 .form__button {
     font-family: 'Nobile', sans-serif;
+    display: inline-block;
 }
 
 /*.selectMenu {
@@ -119,27 +125,3 @@ body {
 }
 
 
-
-
-
-@media only screen and (max-width: 480px){
-    .mainNav {
-        height: 15%;
-        width: 100%;
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        background-color: rgba(205,92,92,0.75);
-    }
-    
-    .mainNav__link {
-        color: white;
-        padding: 16px;
-        text-decoration: none;
-        display: block;
-        font-family: 'Corben', Georgia, Times, serif;
-    }
-
-    
-
-}
