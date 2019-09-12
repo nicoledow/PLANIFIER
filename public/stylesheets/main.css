@@ -1,4 +1,4 @@
-
+@media only screen {
 body {
     background-color: rgb(255,250,250); /* "snow" */
 }
@@ -60,6 +60,7 @@ body {
 
 .list { /* ul tags */
     list-style-type: none;
+    
 }
 
 .list__item { /* li within a ul */
@@ -97,8 +98,6 @@ body {
 }
 
 .form__button {
-    float: right;
-    
     font-family: 'Nobile', sans-serif;
 }
 
@@ -116,4 +115,31 @@ body {
 
 .text { /* p tags */
     font-family: 'Nobile', sans-serif;
+}
+}
+
+
+
+
+
+@media only screen and (max-width: 480px){
+    .mainNav {
+        height: 15%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(205,92,92,0.75);
+    }
+    
+    .mainNav__link {
+        color: white;
+        padding: 16px;
+        text-decoration: none;
+        display: block;
+        font-family: 'Corben', Georgia, Times, serif;
+    }
+
+    
+
 }
