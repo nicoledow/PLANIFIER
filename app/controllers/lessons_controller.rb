@@ -63,7 +63,8 @@ class LessonsController < ApplicationController
 
     get '/mylessons' do
       verify_logged_in
-      redirect to "/teachers/#{current_user.id}"
+      @me = Teacher.find_by_id(current_user.id)
+      erb :'/lessons/my_account'
     end
 
 end
