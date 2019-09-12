@@ -1,6 +1,64 @@
 
-@media screen {
+body {
+    background-color: #EADEDB; /* "Almost mauve" */
+}
 
+.mainHeader { /* h1 tags */
 
+}
+
+.mediumHeadr { /* h2 tags */
+
+}
+
+.smallHeader { /* h3 tags */
+
+}
+
+.smallInfoHeader { /* h4 tags */
+
+}
+
+.list { /* ul tags */
+
+}
+
+.list__item { /* li within a ul */
+
+}
+
+.list__itemLink {
+
+}
+
+.form {
+
+}
+
+.form__label {
+
+}
+
+.form__textInput {
+
+}
+
+.form__button {
+
+}
+
+.selectMenu {
+
+}
+
+.selectMenu__option {
+
+}
+
+.lesson { /* lesson display card */
+
+}
+
+.text { /* p tags */
 
 }
