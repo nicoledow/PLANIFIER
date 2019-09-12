@@ -1,15 +1,15 @@
-<h1>Create an Account</h2>
-<h4>All fields are required.</h4>
+<h1 class="mainHeader">Create an Account</h2>
+<h4 class="smallInfoHeader">All fields are required.</h4>
 
-<form action="/signup" method="post">
-  <label for="name">Your name: </label>
-  <input type="text" name="name"><br>
+<form action="/signup" method="post" class="form">
+  <label for="name" class="form__label">Your name: </label>
+  <input type="text" name="name" class="form__textInput"><br>
 
-  <label for="email">Your email address:</label>
-  <input type="text" name="email"><br>
+  <label for="email" class="form__label">Your email address:</label>
+  <input type="text" name="email" class="form__textInput"><br>
 
-  <label for="password">Password: </label>
-  <input type="password" name="password"><br>
+  <label for="password" class="form__label">Password: </label>
+  <input type="password" name="password" class="form__textInput"><br>
   
-  <input type="submit">
+  <input type="submit" class="form__button">
 </form>
