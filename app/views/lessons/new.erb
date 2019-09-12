@@ -16,7 +16,7 @@
   <label for="course" class="form__label">Course: </label>
   <select name="course" class="selectMenu">
     <% @my_courses.each do |course| %>
-    <option value="<%=course.id%>"><%= course.name % class="selectMenu__option"></option>
+    <option class="selectMenu__option" value="<%=course.id%>"><%= course.name %></option>
     <%end%>
   </select>
 
