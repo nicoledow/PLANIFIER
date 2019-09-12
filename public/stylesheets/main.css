@@ -3,6 +3,28 @@ body {
     background-color: #EADEDB; /* "Almost mauve" */
 }
 
+.mainNav {
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #6495ED;
+}
+
+.mainNav__link {
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+}
+
+.mainNav__link:hover {
+    color: #6495ED;
+    background-color: #fff; 
+}
+
 .mainHeader { /* h1 tags */
     font-family: 'Lora', serif;
 }
@@ -28,7 +50,7 @@ body {
 }
 
 .list__itemLink {
-
+    font-family: 'Roboto', sans-serif;
 }
 
 .form {
@@ -60,5 +82,5 @@ body {
 }
 
 .text { /* p tags */
-
+    font-family: 'Roboto', sans-serif;
 }
