@@ -1,8 +1,8 @@
-<h1>Lessons for <%=@course.name %> </h1>
-<h2> by <%=@course.teacher.name %> </h2>
+<h1 class="mainHeader">Lessons for <%=@course.name %> </h1>
+<h2 class="mediumHeader"> by <%=@course.teacher.name %> </h2>
 
-<ul>
+<ul class="list">
   <% @lessons.each do |lesson| %>
-    <li> <a href="/lessons/<%=lesson.id%>"> <%= lesson.title %> </a> </li>
+    <li class="list__item"> <a href="/lessons/<%=lesson.id%>" class="list__itemLink"> <%= lesson.title %> </a> </li>
   <% end %>
 </ul>
