@@ -1,66 +1,6 @@
 
 @media screen {
-    body {
-        background-color: #FFFAF0;
-    }
-    h1, h2 {
-        font-family: 'Questrial', sans-serif;
-        color: #6495ED;
-    }
 
-    .flex-container {
-        display:flex;
-        width: 100vw;
-        height: 100vh;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-items: center;
-        
-    }
-
-    #navbar {
-        height: 100%;
-        width: 20%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: #6495ED;
-      }
-      
-      
-      #navbar a {
-        color: white;
-        padding: 16px;
-        text-decoration: none;
-        display: block;
-        font-family: 'Roboto', sans-serif;
-      }
-
-      #navbar a:hover {
-        color: #6495ED;
-        background-color: #fff; 
-    }
-   
-
-    .card {
-        background-color: #B0C4DE;
-        margin: 10px;
-        padding: 10px;
-        align-items: center;
-        box-shadow: 3px 3px 3px #808080;
-    }
-
-    .form-button {
-        display: inline-block;
-    }
-
-    ul {
-        list-style-type: none;
-    }
-
-    h3, h4, h5, p {
-        font-family: 'Lora', serif;
-    }
 
 
 }
