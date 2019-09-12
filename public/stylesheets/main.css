@@ -4,11 +4,11 @@ body {
 }
 
 .mainHeader { /* h1 tags */
-
+    font-family: 'Lora', serif;
 }
 
-.mediumHeadr { /* h2 tags */
-
+.mediumHeader { /* h2 tags */
+    font-family: 'Lora', serif;
 }
 
 .smallHeader { /* h3 tags */
