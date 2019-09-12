@@ -30,8 +30,8 @@ body {
 }
 
 .mainNav__link:hover {
-    color: #6495ED;
-    background-color: #EADEDB; /* "Almost mauve" */
+    color: rgb(205,92,92); /* "Indian Red" */;
+    background-color: rgb(255,250,250); /* "snow" */
 }
 
 .mainHeader, .mediumHeader { /* h1 tags */
@@ -81,6 +81,8 @@ body {
 .form {
     background-color: rgba(205,92,92,0.75); /* "Indian Red", with slight transparency */
     padding: 3em;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(255,250,250); /* "snow" */
 }
 
 .form__label {
@@ -91,10 +93,13 @@ body {
 
 }
 
+.form__textArea {
+  
+}
+
 .form__button {
     float: right;
     font-family: 'Roboto', sans-serif;
-    
 }
 
 .selectMenu {
