@@ -26,7 +26,7 @@ body {
     padding: 16px;
     text-decoration: none;
     display: block;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Corben', Georgia, Times, serif;
 }
 
 .mainNav__link:hover {
@@ -35,18 +35,16 @@ body {
 }
 
 .mainHeader, .mediumHeader { /* h1 tags */
-    font-family: 'Lora', serif;
+   font-family: 'Corben', Georgia, Times, serif;
+   color: rgb(205,92,92); /* "Indian Red" */ 
+}
+
+
+.smallHeader, .smallInfoHeader { /* h3 tags  */
+    font-family: 'Nobile', sans-serif;
     color: rgb(205,92,92); /* "Indian Red" */
 }
 
-
-.smallHeader { /* h3 tags */
-
-}
-
-.smallInfoHeader { /* h4 tags */
-
-}
 
 .smallHeader__link {
     text-decoration: none;
@@ -56,7 +54,7 @@ body {
     padding: 10px;
     align-items: center;
     box-shadow: 3px 3px 3px #808080;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Nobile', sans-serif;
     color: #fff; /* creme de la peche */
 }
 
@@ -69,11 +67,11 @@ body {
     margin: 10px;
     padding: 10px;
     box-shadow: 2px 2px 2px #808080;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Nobile', sans-serif;
 }
 
 .list__itemLink {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Nobile', sans-serif;
     text-decoration: none;
     color: rgb(255,250,250); /* "snow" */
 }
@@ -81,39 +79,41 @@ body {
 .form {
     background-color: rgba(205,92,92,0.75); /* "Indian Red", with slight transparency */
     padding: 3em;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Nobile', sans-serif;
     color: rgb(255,250,250); /* "snow" */
 }
 
 .form__label {
-
+  padding: 5px;
+  
 }
 
 .form__textInput {
-
+  padding: 5px;
 }
 
 .form__textArea {
-  
+  padding: 5px;
 }
 
 .form__button {
     float: right;
-    font-family: 'Roboto', sans-serif;
+    
+    font-family: 'Nobile', sans-serif;
 }
 
-.selectMenu {
+/*.selectMenu {
 
-}
+}*/
 
-.selectMenu__option {
+/*.selectMenu__option {
 
-}
+}*/
 
-.lesson { /* lesson display card */
+/*.lesson { /* lesson display card 
 
-}
+}*/
 
 .text { /* p tags */
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Nobile', sans-serif;
 }
