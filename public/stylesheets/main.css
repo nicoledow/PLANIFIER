@@ -45,6 +45,18 @@ body {
     color: rgb(205,92,92); /* "Indian Red" */
 }
 
+.mediumHeader__link {
+    text-decoration: none;
+    font-family: 'Corben', Georgia, Times, serif;
+    background-color: #615550;
+    margin: 10px;
+    padding: 10px;
+    align-items: center;
+    box-shadow: 3px 3px 3px #808080;
+    font-family: 'Nobile', sans-serif;
+    color: #fff; /* creme de la peche */
+}
+
 
 .smallHeader__link {
     text-decoration: none;
