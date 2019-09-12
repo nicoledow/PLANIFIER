@@ -1,24 +1,24 @@
-<h1>Create a new lesson:</h1>
+<h1 class="mainHeader">Create a new lesson:</h1>
 
-<form action="/lessons" method="post">
-  <label for="title">Lesson title: </label>
-  <input type="text" name="title"><br>
+<form action="/lessons" method="post" class="form">
+  <label for="title" class="form__label">Lesson title: </label>
+  <input type="text" name="title" class="form__textInput"><br>
 
-  <label for="objectives">Objective(s): </label>
-  <input type="textarea" name="objectives"><br>
+  <label for="objectives" class="form__label">Objective(s): </label>
+  <input type="textarea" name="objectives" class="form__textInput"><br>
 
-  <label for="content">Plan content: </label>
-  <input type="textarea" name="content"><br>
+  <label for="content" class="form__label">Plan content: </label>
+  <input type="textarea" name="content" class="form__textInput"><br>
 
-  <label for="assessment">Assessment: </label>
-  <input type="textarea" name="assessment"><br>
+  <label for="assessment" class="form__label">Assessment: </label>
+  <input type="textarea" name="assessment" class="form__textInput"><br>
 
-  <label for="course">Course: </label>
-  <select name="course">
+  <label for="course" class="form__label">Course: </label>
+  <select name="course" class="selectMenu">
     <% @my_courses.each do |course| %>
-    <option value="<%=course.id%>"><%= course.name %></option>
+    <option value="<%=course.id%>"><%= course.name % class="selectMenu__option"></option>
     <%end%>
   </select>
 
-  <input type="submit" value="Create">
+  <input type="submit" value="Create" class="form__button">
 </form>
