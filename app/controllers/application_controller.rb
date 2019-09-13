@@ -90,6 +90,7 @@ class ApplicationController < Sinatra::Base
 #could use an error message here
     def verify_logged_in
       if !session[:user_id]
+        flash[:please_log_in] = "Please log in to continue."
         redirect to '/login'
       end
     end
