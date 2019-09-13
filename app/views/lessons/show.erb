@@ -18,8 +18,8 @@
   <% end %><br><br>
  
 
-  <ul class="buttonList">
-  <li class="buttonList__button">
+  <ul id="buttonList">
+  <li id="editButton"">
   <% if @lesson.course.teacher_id == @current_user.id %>
     <!-- edit button -->
     <form action="/lessons/<%=@lesson.id%>/edit" method="get">
@@ -28,7 +28,7 @@
   </li>
 
     <!-- delete button -->
-    <li class="buttonList__button">
+    <li id="deleteButton"">
     <form action="/lessons/<%=@lesson.id%>" method="post">
       <input id="hidden" type="hidden" name="_method" value="delete">
       <input type="submit" value="Delete" class="form__button">
@@ -37,7 +37,7 @@
     </li>
 
   <!-- save button -->
-  <li class="buttonList__button">
+  <li id="saveButton">
   <% if @lesson.course.teacher_id != @current_user.id %>
   <a href="/lessons/<%=@lesson.id%>/save" class="mediumHeader__link"> Save this lesson </a>
   <% end %>
