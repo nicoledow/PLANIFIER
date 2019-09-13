@@ -16,6 +16,19 @@
     <h4 class="smallInfoHeader"> Assessment: </h4>
     <p class="text"> <%= @lesson.assessment %> </p> 
   <% end %><br><br>
+  
+  <% if @lesson.course.teacher_id == @current_user.id %>
+    <!-- edit button -->
+    <form action="/lessons/<%=@lesson.id%>/edit" method="get">
+      <input type="submit" value="Edit" class="form__button">
+    </form>
+
+    <!-- delete button -->
+    <form action="/lessons/<%=@lesson.id%>" method="post">
+      <input id="hidden" type="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete" class="form__button">
+    </form>
+  <% end %>
 
   <a href="/lessons/<%=@lesson.id%>/save" class="mediumHeader__link"> Save this lesson </a>
 

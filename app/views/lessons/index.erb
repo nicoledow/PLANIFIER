@@ -4,20 +4,7 @@
 <ul class="list">
   <% @lessons.each do |lesson| %>
     <li class="list__item"><a href="/lessons/<%=lesson.id%>" class="list__itemLink"> <%= lesson.title %> </a> 
-    
-      <% if lesson.course.teacher_id == @current_user.id %>
-        <!-- edit button -->
-        <form action="/lessons/<%=lesson.id%>/edit" method="get">
-          <input type="submit" value="Edit" class="form__button">
-        </form>
-
-        <!-- delete button -->
-        <form action="/lessons/<%=lesson.id%>" method="post">
-          <input id="hidden" type="hidden" name="_method" value="delete">
-          <input type="submit" value="Delete" class="form__button">
-        </form>
         </li>
-      <% end %>
   <% end %>
 </ul>
 
