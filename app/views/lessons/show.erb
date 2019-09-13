@@ -1,7 +1,7 @@
 <h1 class="mainHeader"> <%= @lesson.title %> </h1>
 <h2 class="mediumHeader"> by <%= @lesson.course.teacher.name %> </h2>
 
-<div class="lesson">
+
   <% if @lesson.objectives %>
     <h4 class="smallInfoHeader"> Objectives: </h4>
     <p class="text"> <%= @lesson.objectives %> </p> <br>
@@ -16,25 +16,31 @@
     <h4 class="smallInfoHeader"> Assessment: </h4>
     <p class="text"> <%= @lesson.assessment %> </p> 
   <% end %><br><br>
-  
-  <div class="ownerButtons"
+ 
+
+  <ul class="buttonList">
+  <li class="buttonList__button">
   <% if @lesson.course.teacher_id == @current_user.id %>
     <!-- edit button -->
     <form action="/lessons/<%=@lesson.id%>/edit" method="get">
       <input type="submit" value="Edit" class="form__button">
     </form>
+  </li>
 
     <!-- delete button -->
+    <li class="buttonList__button">
     <form action="/lessons/<%=@lesson.id%>" method="post">
       <input id="hidden" type="hidden" name="_method" value="delete">
       <input type="submit" value="Delete" class="form__button">
     </form>
-  <% end %>
-  </div>
+    <% end %>
+    </li>
 
   <!-- save button -->
+  <li class="buttonList__button">
   <% if @lesson.course.teacher_id != @current_user.id %>
   <a href="/lessons/<%=@lesson.id%>/save" class="mediumHeader__link"> Save this lesson </a>
   <% end %>
+  </li>
+  </ul>
 
-</div>
