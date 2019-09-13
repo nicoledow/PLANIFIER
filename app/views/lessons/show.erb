@@ -15,8 +15,8 @@
   <% if @lesson.assessment %>
     <h4 class="smallInfoHeader"> Assessment: </h4>
     <p class="text"> <%= @lesson.assessment %> </p> 
-  <% end %>
+  <% end %><br><br>
 
-  
+  <a href="/lessons/<%=@lesson.id%>/save" class="mediumHeader__link"> Save this lesson </a>
 
 </div>

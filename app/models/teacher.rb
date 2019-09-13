@@ -6,5 +6,4 @@ class Teacher < ActiveRecord::Base
           
   has_many :courses
   has_many :lessons, through: :courses
-  has_many :lessons_saved, through: :saved_lessons, class_name: "Lesson"
 end
