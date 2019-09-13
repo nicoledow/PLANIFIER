@@ -45,16 +45,18 @@ body {
     color: rgb(205,92,92); /* "Indian Red" */
 }
 
-.mediumHeader__link {
+.mediumHeader__link, .form__button {
     text-decoration: none;
     font-family: 'Corben', Georgia, Times, serif;
     background-color: #615550;
     margin: 10px;
     padding: 10px;
-    align-items: center;
+    width: 100px;
+    font-size: 16px;
     box-shadow: 3px 3px 3px #808080;
     font-family: 'Nobile', sans-serif;
     color: #fff; 
+    display: inline-block;
 }
 
 
@@ -127,14 +129,7 @@ body {
     padding: 8px 8px 8px 8px;
 }
 
-.form__button {
-    font-family: 'Corben', Georgia, Times, serif;
-    font-size: 12px;
-    display: inline-block;
-    border-radius: 8px;
-    border: 1px solid grey;
-    padding: 8px 8px 8px 8px;
-}
+
 
 
 .text { 
