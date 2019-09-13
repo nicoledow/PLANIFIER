@@ -8,7 +8,6 @@ body {
     width: 100vw;
     height: 100vh;
     flex-direction: column;
-    flex-wrap: wrap;
     align-items: center;
 }
 
@@ -27,6 +26,7 @@ body {
     text-decoration: none;
     display: block;
     font-family: 'Corben', Georgia, Times, serif;
+    font-weight: bold;
 }
 
 .mainNav__link:hover {
@@ -34,13 +34,13 @@ body {
     background-color: rgb(255,250,250); /* "snow" */
 }
 
-.mainHeader, .mediumHeader { /* h1 tags */
+.mainHeader, .mediumHeader { 
    font-family: 'Corben', Georgia, Times, serif;
    color: rgb(205,92,92); /* "Indian Red" */ 
 }
 
 
-.smallHeader, .smallInfoHeader { /* h3 tags  */
+.smallHeader, .smallInfoHeader { 
     font-family: 'Nobile', sans-serif;
     color: rgb(205,92,92); /* "Indian Red" */
 }
@@ -70,11 +70,11 @@ body {
     color: #fff; /* creme de la peche */
 }
 
-.list { /* ul tags */
+.list { 
     list-style-type: none;
 }
 
-.list__item { /* li within a ul */
+.list__item { 
     background-color: rgba(205,92,92,0.75); /* "Indian Red", with slight transparency */
     margin: 10px;
     padding: 10px;
@@ -98,11 +98,12 @@ body {
 }
 
 .form__label {
-    font-family: 'Nobile', sans-serif;
+    font-family: 'Corben', Georgia, Times, serif;
+    font-weight: bold;
 }
 
 .form__textInput {
-
+  padding: 5px;
 }
 
 .form__piece {
@@ -111,35 +112,25 @@ body {
     position: relative;
 }
 
-.form__piece select option {
-    background-color: black;
-}
 
 .form__textArea {
   width: 300px;
   height: 150px;
 }
 
-.form__button {
-    font-family: 'Nobile', sans-serif;
+.form__button, .selectMenu {
+    font-family: 'Corben', Georgia, Times, serif;
+    font-size: 16px;
     display: inline-block;
-}
-
-.selectMenu {
-    background-color: rgb(255,250,250); /* "snow" */
-    padding: 8px 16px;
-    border: 1px solid transparent;
-    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid grey;
+    padding: 8px 8px 8px 8px;
 }
 
 
 
-/*.lesson { /* lesson display card 
 
-}*/
-
-.text { /* p tags */
+.text { 
     font-family: 'Nobile', sans-serif;
 }
 
