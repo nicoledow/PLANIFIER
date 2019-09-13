@@ -17,6 +17,11 @@ class LessonsController < ApplicationController
   end
 
 
+  get '/lessons/:id/save' do
+    SavedLesson.create(saving_teacher_id: current_user.id, saved_lesson_id: params["id"])
+    redirect to '/lessons/saved'
+  end
+
     get '/lessons/:id/edit' do
       verify_logged_in
       @lesson = Lesson.find_by_id(params["id"])
@@ -36,6 +41,12 @@ class LessonsController < ApplicationController
       @lesson = Lesson.find_by_id(params["id"])
       @lesson.destroy
       redirect to '/lessons'
+    end
+
+
+    get '/lessons/saved' do
+      @current_user = current_user
+      erb :'/lessons/saved'
     end
 
 
@@ -66,5 +77,7 @@ class LessonsController < ApplicationController
       @me = Teacher.find_by_id(current_user.id)
       erb :'/lessons/my_account'
     end
+
+    
 
 end

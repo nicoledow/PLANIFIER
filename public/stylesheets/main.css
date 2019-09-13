@@ -54,7 +54,7 @@ body {
     align-items: center;
     box-shadow: 3px 3px 3px #808080;
     font-family: 'Nobile', sans-serif;
-    color: #fff; /* creme de la peche */
+    color: #fff; 
 }
 
 
@@ -105,7 +105,7 @@ body {
 }
 
 .form__piece {
-    border: 2px solid black;
+    border: 2px solid  #fff;;
     padding: 5px;
     justify-content: center;
 }
