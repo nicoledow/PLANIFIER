@@ -134,6 +134,10 @@ body {
 .text { /* p tags */
     font-family: 'Nobile', sans-serif;
 }
+
+.flash {
+    color: red;
+}
 }
 
 
