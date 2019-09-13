@@ -7,11 +7,16 @@ class TeachersController < ApplicationController
       erb :'/teachers/index'
     end
 
-#could use error message here in case id or URL is invalid
+
     get '/teachers/:id' do
       verify_logged_in
-      @teacher = Teacher.find_by_id(params["id"])
-      erb :'/teachers/show'
+      if Teacher.find_by_id(params["id"])
+        @teacher = Teacher.find_by_id(params["id"])
+        erb :'/teachers/show'
+      else
+        flash[:taecher_not_found] = "Teacher not found."
+        redirect to '/teachers'
+      end
     end
 
 

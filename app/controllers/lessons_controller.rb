@@ -8,20 +8,29 @@ class LessonsController < ApplicationController
 
 
 
-   #could use error message here -- if lesson id is invalid/lesson doesn't exist/invalid URL
    get '/lessons/:id' do 
     verify_logged_in
-    @lesson = Lesson.find_by_id(params["id"])
-    @current_user = current_user
-    erb :'/lessons/show'
+    if Lesson.find_by_id(params["id"])
+      @lesson = Lesson.find_by_id(params["id"])
+      @current_user = current_user
+      erb :'/lessons/show'
+    else
+      flash[:lesson_not_found] = "Lesson not found."
+      redirect to '/lessons'
+    end
   end
 
 
 
     get '/lessons/:id/edit' do
       verify_logged_in
-      @lesson = Lesson.find_by_id(params["id"])
-      erb :'/lessons/edit'
+      if Lesson.find_by_id(params["id"])
+        @lesson = Lesson.find_by_id(params["id"])
+        erb :'/lessons/edit'
+      else
+        flash[:lesson_not_found] = "Lesson not found."
+        redirect to '/lessons'
+      end
     end
 
 
@@ -49,7 +58,6 @@ class LessonsController < ApplicationController
     end
 
 
-#could use an error message here
     post '/lessons' do
       @course = Course.find_by_id(params["course"].to_i)
       @lesson = Lesson.new(title: params["title"], objectives: params["objectives"], content: params["content"], assessment: params["assessment"], course_id: @course.id)
@@ -58,6 +66,7 @@ class LessonsController < ApplicationController
         redirect to "/lessons/#{@lesson.id}"
       else
         redirect to '/lessons/new'
+        flash[:general_error] = "An error occurred. Please try again."
       end
     end
 
