@@ -29,6 +29,7 @@ class LessonsController < ApplicationController
 
   get '/lessons/saved' do 
     @current_user = current_user
+    @saved_lessons = SavedLesson.all
     erb :'/savedlessons/index'
   end
 
