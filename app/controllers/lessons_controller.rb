@@ -7,6 +7,32 @@ class LessonsController < ApplicationController
   end
 
 
+  get '/lessons/:id/edit' do
+    verify_logged_in
+    if Lesson.find_by_id(params["id"])
+      @lesson = Lesson.find_by_id(params["id"])
+      erb :'/lessons/edit'
+    else
+      flash[:lesson_not_found] = "Lesson not found."
+      redirect to '/lessons'
+    end
+  end
+
+
+  get '/lessons/:id/save' do
+    @lesson = Lesson.find_by_id(params["id"])
+    @teacher = Teacher.find_by_id(current_user.id)
+    SavedLesson.create(saving_teacher_id: @teacher.id, lesson_id: @lesson.id)
+    redirect to "/lessons/#{@lesson.id}"
+  end
+
+
+  get '/lessons/saved' do 
+    @current_user = current_user
+    erb :'/savedlessons/index'
+  end
+
+
 
    get '/lessons/:id' do 
     verify_logged_in
@@ -22,18 +48,6 @@ class LessonsController < ApplicationController
 
 
 
-    get '/lessons/:id/edit' do
-      verify_logged_in
-      if Lesson.find_by_id(params["id"])
-        @lesson = Lesson.find_by_id(params["id"])
-        erb :'/lessons/edit'
-      else
-        flash[:lesson_not_found] = "Lesson not found."
-        redirect to '/lessons'
-      end
-    end
-
-
     patch '/lessons/:id' do
       @lesson = Lesson.find_by_id(params["id"])
       @lesson.update(title: params["title"], objectives: params["objectives"], content: params["content"], assessment: params["assessment"])
@@ -47,6 +61,7 @@ class LessonsController < ApplicationController
       @lesson.destroy
       redirect to '/lessons'
     end
+
 
 
 
@@ -76,14 +91,6 @@ class LessonsController < ApplicationController
       verify_logged_in
       @me = Teacher.find_by_id(current_user.id)
       erb :'/lessons/my_account'
-    end
-
-
-    get '/lessons/:id/save' do
-      @lesson = Lesson.find_by_id(params["id"])
-      @teacher = Teacher.find_by_id(current_user.id)
-      SavedLesson.create(saving_teacher_id: @teacher.id, lesson_id: @lesson.id)
-      redirect to '/lessons/:id'
     end
 
     
