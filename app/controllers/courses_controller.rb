@@ -8,7 +8,6 @@ class CoursesController < ApplicationController
   end
 
 
-  #could use an error message here
   post '/courses' do
     @course = Course.new(name: params["name"], teacher_id: current_user.id)
 
@@ -16,6 +15,7 @@ class CoursesController < ApplicationController
       redirect to "/courses/#{@course.id}"
     else
       @course.destroy
+      flash[:general_error] = "An error occurred. Please try again."
       redirect to '/courses/new'
     end
   end
@@ -35,19 +35,28 @@ class CoursesController < ApplicationController
   end
 
 
-#could use an error message here -- if lesson doesn't exist (invalid URL)
   get '/courses/:id' do
     verify_logged_in
-    @course = Course.find_by_id(params["id"].to_i)
-    @lessons = Lesson.all.select {|lesson| lesson.course_id == @course.id}
-    erb :'/courses/show'
+    if Course.find_by_id(params["id"].to_i)
+      @course = Course.find_by_id(params["id"].to_i)
+      @lessons = Lesson.all.select {|lesson| lesson.course_id == @course.id}
+      erb :'/courses/show'
+    else
+      flash[:course_not_found] = "Course not found."
+      redirect to '/courses'
+    end
   end
 
+
   patch '/courses/:id' do
-    @course = Course.find_by_id(params["id"])
-    @course.update(name: params["name"])
-    @course.save
-    redirect to "/courses/#{@course.id}"
+    if Course.find_by_id(params["id"])
+      @course = Course.find_by_id(params["id"])
+      @course.update(name: params["name"])
+      @course.save
+      redirect to "/courses/#{@course.id}"
+    else
+      flash[:course_not_found] = "Course not found."
+    end
   end
 
 
