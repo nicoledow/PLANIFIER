@@ -45,7 +45,7 @@ class LessonsController < ApplicationController
 
 
     get '/lessons/saved' do
-      @current_user = current_user
+      @saved_lessons = SavedLesson.all.select {|sl| sl.saving_teacher_id == current_user.id}
       erb :'/lessons/saved'
     end
 
