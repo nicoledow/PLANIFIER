@@ -80,10 +80,10 @@ class LessonsController < ApplicationController
 
 
     get '/lessons/:id/save' do
-      binding.pry
       @lesson = Lesson.find_by_id(params["id"])
       @teacher = Teacher.find_by_id(current_user.id)
       SavedLesson.create(saving_teacher_id: @teacher.id, lesson_id: @lesson.id)
+      redirect to '/lessons/:id'
     end
 
     
