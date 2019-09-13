@@ -97,7 +97,7 @@ body {
 }
 
 .form__label {
-  
+    font-family: 'Nobile', sans-serif;
 }
 
 .form__textInput {
@@ -107,7 +107,11 @@ body {
 .form__piece {
     border: 2px solid  #fff;;
     padding: 5px;
-    justify-content: center;
+    position: relative;
+}
+
+.form__piece select option {
+    background-color: black;
 }
 
 .form__textArea {
@@ -119,13 +123,15 @@ body {
     display: inline-block;
 }
 
-/*.selectMenu {
+.selectMenu {
+    background-color: #F5D6C6; /*creme de peche*/
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+}
 
-}*/
 
-/*.selectMenu__option {
-
-}*/
 
 /*.lesson { /* lesson display card 
 
