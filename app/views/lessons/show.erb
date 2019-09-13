@@ -32,6 +32,7 @@
   <% end %>
   </div>
 
+  <!-- save button -->
   <% if @lesson.course.teacher_id != @current_user.id %>
   <a href="/lessons/<%=@lesson.id%>/save" class="mediumHeader__link"> Save this lesson </a>
   <% end %>
