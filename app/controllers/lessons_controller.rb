@@ -17,10 +17,6 @@ class LessonsController < ApplicationController
   end
 
 
-  get '/lessons/:id/save' do
-    SavedLesson.create(saving_teacher_id: current_user.id, saved_lesson_id: params["id"])
-    redirect to '/lessons/saved'
-  end
 
     get '/lessons/:id/edit' do
       verify_logged_in
@@ -43,11 +39,6 @@ class LessonsController < ApplicationController
       redirect to '/lessons'
     end
 
-
-    get '/lessons/saved' do
-      @saved_lessons = SavedLesson.all.select {|sl| sl.saving_teacher_id == current_user.id}
-      erb :'/lessons/saved'
-    end
 
 
     get '/lessons' do 
