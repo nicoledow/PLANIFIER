@@ -118,7 +118,7 @@ body {
   height: 150px;
 }
 
-.form__button, .selectMenu {
+.selectMenu {
     font-family: 'Corben', Georgia, Times, serif;
     font-size: 16px;
     display: inline-block;
@@ -127,7 +127,14 @@ body {
     padding: 8px 8px 8px 8px;
 }
 
-
+.form__button {
+    font-family: 'Corben', Georgia, Times, serif;
+    font-size: 12px;
+    display: inline-block;
+    border-radius: 8px;
+    border: 1px solid grey;
+    padding: 8px 8px 8px 8px;
+}
 
 
 .text { 
