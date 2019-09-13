@@ -1,0 +1,165 @@
+@media only screen {
+body {
+    background-color: rgb(255,250,250); /* "snow" */
+}
+
+.flex-container { /* wraps all elements of body except mainNav */
+    display:flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainNav {
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(205,92,92,0.75) /* "Indian Red", with slight transparency */
+}
+
+.mainNav__link {
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Corben', Georgia, Times, serif;
+    font-weight: bold;
+}
+
+.mainNav__link:hover {
+    color: rgb(205,92,92); /* "Indian Red" */;
+    background-color: rgb(255,250,250); /* "snow" */
+}
+
+.mainHeader, .mediumHeader { 
+   font-family: 'Corben', Georgia, Times, serif;
+   color: rgb(205,92,92); /* "Indian Red" */ 
+}
+
+
+.smallHeader, .smallInfoHeader { 
+    font-family: 'Nobile', sans-serif;
+    color: rgb(205,92,92); /* "Indian Red" */
+}
+
+.mediumHeader__link, .form__button {
+    text-decoration: none;
+    font-family: 'Corben', Georgia, Times, serif;
+    background-color: #615550;
+    margin: 10px;
+    padding: 10px;
+    width: 100px;
+    font-size: 16px;
+    box-shadow: 3px 3px 3px #808080;
+    font-family: 'Nobile', sans-serif;
+    color: #fff; 
+    display: inline-block;
+}
+
+
+.smallHeader__link {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    background-color: #615550;
+    margin: 10px;
+    padding: 10px;
+    align-items: center;
+    box-shadow: 3px 3px 3px #808080;
+    font-family: 'Nobile', sans-serif;
+    color: #fff; /* creme de la peche */
+}
+
+.list { 
+    list-style-type: none;
+}
+
+.list__item { 
+    background-color: rgba(205,92,92,0.75); /* "Indian Red", with slight transparency */
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 2px 2px 2px #808080;
+    font-family: 'Nobile', sans-serif;
+    justify-content: center;
+}
+
+.list__itemLink {
+    font-family: 'Nobile', sans-serif;
+    text-decoration: none;
+    color: rgb(255,250,250); /* "snow" */
+}
+
+.form {
+    background-color: rgba(205,92,92,0.75); /* "Indian Red", with slight transparency */
+    padding: 3em;
+    font-family: 'Nobile', sans-serif;
+    color: rgb(255,250,250); /* "snow" */
+    clear: all;
+}
+
+.form__label {
+    font-family: 'Corben', Georgia, Times, serif;
+    font-weight: bold;
+}
+
+.form__textInput {
+  padding: 5px;
+}
+
+.form__piece {
+    border: 2px solid  #fff;;
+    padding: 5px;
+    position: relative;
+}
+
+
+.form__textArea {
+  width: 300px;
+  height: 150px;
+}
+
+.selectMenu {
+    display: block;
+	font-size: 16px;
+	font-family: 'Corben', Georgia, Times, serif;
+	font-weight: 600;
+	line-height: 1.3;
+	padding: .6em 1.4em .5em .8em;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+	margin: 0;
+	border: 1px solid rgb(255,250,250); /* "snow" */
+	box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+	border-radius: .5em;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+
+
+#buttonList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#editButton, #saveButton, #deleteButton {
+  display: inline;
+}
+
+
+.text { 
+    font-family: 'Nobile', sans-serif;
+    color: rgba(205,92,92,0.75);
+}
+
+.flash {
+    color: red;
+}
+}
+
+

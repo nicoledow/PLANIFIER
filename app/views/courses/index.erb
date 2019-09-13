@@ -1,21 +1,22 @@
-<h1> All Courses </h1>
+<h1 class="mainHeader"> All Courses </h1>
 
-<h3><a href="/courses/new">Create a new course.</a> </h3>
+<h3 class="smallHeader"><a href="/courses/new" class="smallHeader__link">Create a new course.</a> </h3>
 
-<ul>
+<ul class="list">
   <% @courses.each do |course| %>
-    <li><a href="/courses/<%=course.id%>"> <%= course.name %></a>, taught by <%= course.teacher.name %></li>
+    <li class="list__item"><a href="/courses/<%=course.id%>" class="list__itemLink"> <%= course.name %></a>
       <% if course.teacher_id == @current_user.id%>
         <!-- edit button -->
         <form action="/courses/<%=course.id%>/edit" method="get">
-          <input type="submit" value="Edit">
+          <input type="submit" value="Edit" class="form__button">
         </form>
         
         <!-- delete button -->
         <form action="/courses/<%=course.id%>" method="post">
           <input id="hidden" type="hidden" name="_method" value="delete">
-          <input type="submit" value="Delete">
+          <input type="submit" value="Delete" class="form__button">
         </form>
       <% end %>
+      </li>
     <% end %>
 </ul>

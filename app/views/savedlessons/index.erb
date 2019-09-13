@@ -1,0 +1,9 @@
+<h1 class="mainHeader"> View Your Saved Lessons: </h1>
+
+
+<ul class="list">
+<% @saved_lessons.each do |sl| %>
+  <% lesson = Lesson.find_by_id(sl.lesson_id) %>
+  <li class="list__item"><a href="/lessons/<%=lesson.id%>" class="list__itemLink"><%= lesson.title %> </a></li>
+<% end %>
+</ul>

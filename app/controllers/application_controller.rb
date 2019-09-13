@@ -7,6 +7,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
     enable :sessions
     set :session_secret, "abcdef"
+    register Sinatra::Flash
   end
 
 
@@ -55,20 +56,23 @@ class ApplicationController < Sinatra::Base
   end
 
   
-#could use an error message here
+
   post '/signup' do
+    @teacher = Teacher.new(params)
     #presence & uniqueness of email, password done via ActiveRecord in model
-    if params["password"] == "" || params["email"] == "" || params["name"] == ""
+    if @teacher.save
+      @session = session
+      @session[:user_id] = @teacher.id
+      redirect to '/lessons'
+    elsif params["email"] == "" || params["password"] == "" || params["name"] == ""
+      flash[:missing_info] = "Please include a name, email address, and password."
+      redirect to '/signup'
+    elsif Teacher.find_by(email: params["email"])
+      flash[:email_already_exists] = "Email address already in use."
       redirect to '/signup'
     else
-      @teacher = Teacher.new(params)
-      if @teacher.save
-        @session = session
-        @session[:user_id] = @teacher.id
-        redirect to '/lessons'
-      else
-        redirect to '/signup'
-      end
+      flash[:general_error] = "An error occurred. Please try again."
+      redirect to '/signup'
     end
   end
 
@@ -83,9 +87,10 @@ class ApplicationController < Sinatra::Base
       !!session[:user_id]
     end
 
-#could use an error message here
+
     def verify_logged_in
       if !session[:user_id]
+        flash[:please_log_in] = "Please log in to continue."
         redirect to '/login'
       end
     end

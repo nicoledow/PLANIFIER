@@ -1,7 +1,7 @@
-<h1> Click one of <%= @teacher.name %>'s courses to see their lessons: </h1>
+<h1 class="mainHeader"> Click one of <%= @teacher.name %>'s courses to see their lessons: </h1>
 
-<ul>
+<ul class="list">
   <% @teacher.courses.each do |course| %>
-    <li> <a href="/courses/<%=course.id%>"> <%= course.name %> </a> </li>
+    <li class="list__item"> <a href="/courses/<%=course.id%>" class="list__itemLink"> <%= course.name %> </a> </li>
   <% end %>
 </ul>

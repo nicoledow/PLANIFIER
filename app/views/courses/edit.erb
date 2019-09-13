@@ -1,8 +1,8 @@
-<h1> Edit your course: </h1>
+<h1 class="mainHeader"> Edit your course: </h1>
 
-<form action="/courses/<%=@course.id%>" method="post">
+<form action="/courses/<%=@course.id%>" method="post" class="form">
   <input id="hidden" type="hidden" name="_method" value="patch">
-  <label for="name"> Course name: </label>
-  <input type="text" name="name" value="<%=@course.name%>">
-  <input type="submit">
+  <label for="name" class="form__label"> Course name: </label>
+  <input type="text" name="name" value="<%=@course.name%>" class="form__textInput">
+  <input type="submit" class="form__button">
 </form>

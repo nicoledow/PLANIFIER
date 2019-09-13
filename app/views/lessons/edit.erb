@@ -1,20 +1,20 @@
-<h1> Edit Your Lesson </h1>
+<h1 class="mainHeader"> Edit Your Lesson </h1>
 
-<form action="/lessons/<%=@lesson.id%>" method="post">
+<form action="/lessons/<%=@lesson.id%>" method="post" class="form">
   <input id="hidden" type="hidden" name="_method" value="patch">
   
-  <label for="title"> Title: </label>
-  <input type="text" name="title" value="<%=@lesson.title%>"><br>
+  <label for="title" class="form__label"> Title: </label>
+  <input type="text" name="title" value="<%=@lesson.title%>" class="form__textInput"><br>
 
-  <label for="objectives"> Objectives: </label>
-  <input type="text" name="objectives" value="<%=@lesson.objectives%>"><br> 
+  <label for="objectives" class="form__label"> Objectives: </label>
+  <input type="text" name="objectives" value="<%=@lesson.objectives%>" class="form__textInput"><br> 
   
-  <label for="content"> Content: </label>
-  <input type="text" name="content" value="<%=@lesson.content%>"><br>
+  <label for="content" class="form__label"> Content: </label>
+  <input type="text" name="content" value="<%=@lesson.content%>" class="form__textInput"><br>
 
-  <label for="assessment"> Assessment: </label>
-  <input type="text" name="assessment" value="<%=@lesson.assessment%>"><br>
+  <label for="assessment" class="form__label"> Assessment: </label>
+  <input type="text" name="assessment" value="<%=@lesson.assessment%>" class="form__textInput"><br>
 
-  <input type="submit">
+  <input type="submit" class="form__button">
 
 </form>

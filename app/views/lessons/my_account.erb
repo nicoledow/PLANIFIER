@@ -1,0 +1,9 @@
+<h1 class="mainHeader"> Your lesson plans:</h1>
+
+<a class="mediumHeader__link" href="/lessons/new">Create a new lesson </a>
+
+<ul class="list">
+  <% @me.lessons.each do |lesson| %>
+    <li class="list__item"> <a href="/lessons/<%=lesson.id%>" class="list__itemLink"><%= lesson.title %> </a></li>
+  <% end %>
+</ul>

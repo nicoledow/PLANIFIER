@@ -1,9 +1,9 @@
-<h1> See what your colleagues are planning: </h1>
+<h1 class="mainHeader"> See what your colleagues are planning: </h1>
 
-<ul>
+<ul class="list">
   <% @teachers.each do |teacher| %>
     <% if teacher.id != @current_user.id %>
-      <li> <a href="/teachers/<%=teacher.id%>"> <%= teacher.name %>  </a> </li> <br>
+      <li class="list__item"> <a href="/teachers/<%=teacher.id%>" class="list__itemLink"> <%= teacher.name %>  </a> </li> <br>
     <% end %>
   <% end %>
 </ul>

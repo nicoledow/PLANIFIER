@@ -1,20 +1,46 @@
-<h1> <%= @lesson.title %> </h1>
-<h2> by <%= @lesson.course.teacher.name %> </h2>
+<h1 class="mainHeader"> <%= @lesson.title %> </h1>
+<h2 class="mediumHeader"> by <%= @lesson.course.teacher.name %> </h2>
 
-<div id="lesson">
+
   <% if @lesson.objectives %>
-    <h4 class="lesson-details-header"> Objectives: </h4>
-    <p class="lesson-details"> <%= @lesson.objectives %> </p> <br>
+    <h4 class="smallInfoHeader"> Objectives: </h4>
+    <p class="text"> <%= @lesson.objectives %> </p> <br>
   <% end %>
 
   <% if @lesson.content %>
-    <h4 class="lesson-details-header"> Lesson content: </h4>
-    <p class="lesson-details"> <%= @lesson.content %> </p> <br>
+    <h4 class="smallInfoHeader"> Lesson content: </h4>
+    <p class="text"> <%= @lesson.content %> </p> <br>
   <% end %>
 
   <% if @lesson.assessment %>
-    <h4 class="lesson-details-header"> Assessment: </h4>
-    <p class="lesson-details"> <%= @lesson.assessment %> </p> 
-  <% end %>
+    <h4 class="smallInfoHeader"> Assessment: </h4>
+    <p class="text"> <%= @lesson.assessment %> </p> 
+  <% end %><br><br>
+ 
 
-</div>
+  <ul id="buttonList">
+  <li id="editButton"">
+  <% if @lesson.course.teacher_id == @current_user.id %>
+    <!-- edit button -->
+    <form action="/lessons/<%=@lesson.id%>/edit" method="get">
+      <input type="submit" value="Edit" class="form__button">
+    </form>
+  </li>
+
+    <!-- delete button -->
+    <li id="deleteButton"">
+    <form action="/lessons/<%=@lesson.id%>" method="post">
+      <input id="hidden" type="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete" class="form__button">
+    </form>
+    <% end %>
+    </li>
+
+  <!-- save button -->
+  <li id="saveButton">
+  <% if @lesson.course.teacher_id != @current_user.id %>
+  <a href="/lessons/<%=@lesson.id%>/save" class="mediumHeader__link"> Save this lesson </a>
+  <% end %>
+  </li>
+  </ul>
+
