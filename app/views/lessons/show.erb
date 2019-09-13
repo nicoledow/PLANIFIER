@@ -17,6 +17,7 @@
     <p class="text"> <%= @lesson.assessment %> </p> 
   <% end %><br><br>
   
+  <div class="ownerButtons"
   <% if @lesson.course.teacher_id == @current_user.id %>
     <!-- edit button -->
     <form action="/lessons/<%=@lesson.id%>/edit" method="get">
@@ -29,7 +30,10 @@
       <input type="submit" value="Delete" class="form__button">
     </form>
   <% end %>
+  </div>
 
+  <% if @lesson.course.teacher_id != @current_user.id %>
   <a href="/lessons/<%=@lesson.id%>/save" class="mediumHeader__link"> Save this lesson </a>
+  <% end %>
 
 </div>
