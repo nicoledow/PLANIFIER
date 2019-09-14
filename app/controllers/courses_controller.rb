@@ -40,6 +40,7 @@ class CoursesController < ApplicationController
     if Course.find_by_id(params["id"].to_i)
       @course = Course.find_by_id(params["id"].to_i)
       @lessons = Lesson.all.select {|lesson| lesson.course_id == @course.id}
+      @current_user = current_user
       erb :'/courses/show'
     else
       flash[:course_not_found] = "Course not found."

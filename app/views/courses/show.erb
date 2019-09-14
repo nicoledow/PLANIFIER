@@ -1,8 +1,25 @@
-<h1 class="mainHeader">Lessons for <%=@course.name %> </h1>
+<h1 class="mainHeader"> <%=@course.name %> Course</h1>
 <h2 class="mediumHeader"> by <%=@course.teacher.name %> </h2>
-<a href="/lessons/new" class="mediumHeader__link">Create a new lesson.</a>
 
 <ul class="list">
+<% if @course.teacher_id == @current_user.id%>
+<a href="/lessons/new" class="mediumHeader__link">Create a new lesson.</a>
+
+        <!-- edit button -->
+        <form action="/courses/<%=@course.id%>/edit" method="get">
+          <input type="submit" value="Edit" class="form__button">
+        </form>
+        
+        <!-- delete button -->
+        <form action="/courses/<%=@course.id%>" method="post">
+          <input id="hidden" type="hidden" name="_method" value="delete">
+          <input type="submit" value="Delete" class="form__button">
+        </form>
+      <% end %>
+      </li>
+
+
+
   <% @lessons.each do |lesson| %>
     <li class="list__item"> <a href="/lessons/<%=lesson.id%>" class="list__itemLink"> <%= lesson.title %> </a> </li>
   <% end %>
