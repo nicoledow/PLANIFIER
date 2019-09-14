@@ -1,5 +1,5 @@
 <h1 class="mainHeader"> <%= @lesson.title %> </h1>
-<h2 class="mediumHeader"> by <%= @lesson.course.teacher.name %> </h2>
+<h2 class="mediumHeader"> by <a href="/teachers/<%=@lesson.course.teacher.id%>"><%= @lesson.course.teacher.name %></a> </h2>
 
 
   <% if @lesson.objectives %>
