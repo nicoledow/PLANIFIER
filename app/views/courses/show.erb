@@ -1,5 +1,6 @@
 <h1 class="mainHeader">Lessons for <%=@course.name %> </h1>
 <h2 class="mediumHeader"> by <%=@course.teacher.name %> </h2>
+<a href="/lessons/new" class="mediumHeader__link">Create a new lesson.</a>
 
 <ul class="list">
   <% @lessons.each do |lesson| %>
