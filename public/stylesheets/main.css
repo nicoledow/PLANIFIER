@@ -164,6 +164,10 @@ body {
 .flash {
     color: red;
 }
+
+.lessonAuthorDiv li{
+    display: inline-block;
+}
 }
 
 

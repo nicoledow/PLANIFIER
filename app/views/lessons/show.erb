@@ -1,6 +1,8 @@
 <h1 class="mainHeader"> <%= @lesson.title %> </h1>
-<h2 class="mediumHeader"> by <a href="/teachers/<%=@lesson.course.teacher.id%>"><%= @lesson.course.teacher.name %></a> </h2>
-
+<ul class="lessonAuthorDiv">
+<li><p class="text">by</p></li>
+<li><h4 class="list__item"> <a href="/teachers/<%=@lesson.course.teacher.id%>" class="list__itemLink"> <%= @lesson.course.teacher.name %></a> </h4></li>
+</ul>
 
   <% if @lesson.objectives %>
     <h4 class="smallInfoHeader"> Objectives: </h4>
