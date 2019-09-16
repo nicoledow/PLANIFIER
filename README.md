@@ -17,7 +17,7 @@ Run the "shotgun" command from the terminal to run the application on local port
 Planifier is a Sinatra web application written with Ruby, ERB, HTML, and CSS. Data is managed and manipulated by using ActiveRecord and SQLite3.
 
 # Contributing
-Bug reports and pull requests are welcome on GitHub at https://github.com/nicoledow/city_skies. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/nicoledow/planifier. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
 
 # License
