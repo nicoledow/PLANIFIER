@@ -1,9 +1,13 @@
-<h1 class="mainHeader"> <%= @lesson.title %> </h1>
-<ul class="lessonAuthorDiv">
-<li><p class="text">by</p></li>
-<li><h4 class="list__item"> <a href="/teachers/<%=@lesson.course.teacher.id%>" class="list__itemLink"> <%= @lesson.course.teacher.name %></a> </h4></li>
+<div class="headersDiv">
+  <h1 class="mainHeader"> <%= @lesson.title %> </h1>
+</div>
+
+  <ul class="lessonAuthorDiv list">
+    <li><p class="text">by</p></li>
+    <li><h4 class="list__item"> <a href="/teachers/<%=@lesson.course.teacher.id%>" class="list__itemLink"> <%= @lesson.course.teacher.name %></a> </h4></li>
 </ul>
 
+<div class="lesson">
   <% if @lesson.objectives %>
     <h4 class="smallInfoHeader"> Objectives: </h4>
     <p class="text"> <%= @lesson.objectives %> </p> <br>
@@ -20,7 +24,7 @@
   <% end %><br><br>
  
 
-  <ul id="buttonList">
+  <ul id="buttonList list">
   <li id="editButton"">
   <% if @lesson.course.teacher_id == @current_user.id %>
     <!-- edit button -->
@@ -45,4 +49,6 @@
   <% end %>
   </li>
   </ul>
+
+  </div>
 

@@ -1,6 +1,8 @@
-<h1 class="logo">Planifier </h1>
-<h2 class="mediumHeader">Welcome, <%= @current_user.name.split(" ").first %>. </h2>
-<h2 class="mediumHeader">Here is what your colleagues are planning...</h2>
+<div class="headersDiv">
+  <h1 class="logo">Planifier </h1>
+  <h2 class="mediumHeader">Welcome, <%= @current_user.name.split(" ").first %>. </h2>
+  <h2 class="mediumHeader">Here is what your colleagues are planning...</h2>
+</div>
 
 <ul class="list">
   <% @lessons.each do |lesson| %>
