@@ -1,11 +1,14 @@
+<div class="headersDiv">
 <h1 class="mainHeader"> <%=@course.name %> Course</h1>
 <h2 class="mediumHeader"> by <%=@course.teacher.name %> </h2>
+</div>
 
 <ul class="list">
 <% if @course.teacher_id == @current_user.id%>
 <a href="/lessons/new" class="mediumHeader__link">Create a new lesson.</a>
 
         <!-- edit button -->
+        <div class="buttonsDiv">
         <form action="/courses/<%=@course.id%>/edit" method="get">
           <input type="submit" value="Edit" class="form__button">
         </form>
@@ -16,6 +19,7 @@
           <input type="submit" value="Delete" class="form__button">
         </form>
       <% end %>
+      </div>
       </li>
 
 
