@@ -17,6 +17,8 @@
 </head>
 
   <body>
+  
+  <div class="container">
     <nav class="mainNav">
       <a href="/lessons" class="mainNav__link">Lessons Feed</a>
       <a href="/lessons/new" class="mainNav__link">Create a New Lesson</a>
@@ -27,7 +29,6 @@
       <a href="/logout" class="mainNav__link">Logout</a>
     </nav>
 
-    <div class="container">
 
     <% flash.keys.each do |type| %>
       <div data-alert class="flash <%= type %> alert-box radius">
