@@ -2,7 +2,7 @@ class LessonsController < ApplicationController
 
   get '/lessons/new' do
     verify_logged_in
-    @my_courses = Course.all.select {|course| course.teacher_id == current_user.id}
+    @my_courses = current_user.courses
     erb :'/lessons/new'
   end
 
